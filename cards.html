@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cards (Tarot &amp; Intuition) | Doza Kingdom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script> 
+</head>
+<body class="cards-page-wrapper">
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>HEALING, HOPE &amp; HARMONY TO THE HOOD &bull; HANDCRAFTED CUSTOM WAISTBEADS &bull; US NATIONWIDE SHIPPING</span>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
+      <nav class="nav-links">
+        <a href="shop.html" class="nav-item">THE SHOP</a><a href="temple.html" class="nav-item">THE TEMPLE</a><a href="cards.html" class="nav-item active">THE CARDS</a><a href="community.html" class="nav-item">THE COMMUNITY</a><a href="about.html" class="nav-item">ABOUT</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
+        <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL FULLSCREEN -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="brand-logo">DOZA</span>
+      <button class="close-btn" id="closeMobileMenu">&times;</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="shop.html" class="mobile-nav-link">THE SHOP</a><a href="temple.html" class="mobile-nav-link">THE TEMPLE</a><a href="cards.html" class="mobile-nav-link">THE CARDS</a><a href="community.html" class="mobile-nav-link">THE COMMUNITY</a><a href="about.html" class="mobile-nav-link">ABOUT</a>
+      <button class="btn btn-gold w-full mt-4" onclick="openBookingModal('General'); toggleMobileMenu(false);">BOOK EXPERIENCE</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="section-container">
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <span class="sub-heading gold-sub">REALM III &bull; CELESTIAL CLARITY</span>
+        <h1 class="serif-title text-white">WHAT IS YOUR INTUITION<br><span class="italic-serif">TRYING TO TELL YOU?</span></h1>
+        <p class="section-lead text-muted" style="margin: 0.5rem auto 0;">Create space to listen, reflect, explore, and reconnect with your inner knowing.</p>
+      </div>
+
+      <!-- DIGITAL DRAW INTERACTIVO -->
+      <div class="interactive-tarot-deck">
+        <div class="deck-prompt-bar">
+          <span>INTUITIVE DIGITAL DRAW: Focus your question and click each card</span>
+        </div>
+        <div class="tarot-slots-grid">
+          <div class="tarot-card-slot" id="cardSlot1" onclick="revealTarotCard(1)">
+            <div class="card-inner">
+              <div class="card-face card-back"><div class="card-back-ornament"><div class="moon-glyph">&sext;</div><span>TOUCH TO REVEAL</span><span class="slot-position">I. THE ROOTS / PAST</span></div></div>
+              <div class="card-face card-front"><div class="revealed-tag">I. PAST LESSON</div><h4 class="revealed-name" id="cardName1">The High Priestess</h4><p class="revealed-meaning" id="cardDesc1">Inner stillness held answers that mental logic could not offer.</p></div>
+            </div>
+          </div>
+
+          <div class="tarot-card-slot" id="cardSlot2" onclick="revealTarotCard(2)">
+            <div class="card-inner">
+              <div class="card-face card-back"><div class="card-back-ornament"><div class="moon-glyph">&sext;</div><span>TOUCH TO REVEAL</span><span class="slot-position">II. PRESENT ENERGETICS</span></div></div>
+              <div class="card-face card-front"><div class="revealed-tag">II. PRESENT STATE</div><h4 class="revealed-name" id="cardName2">The Empress</h4><p class="revealed-meaning" id="cardDesc2">A cycle of fertile creation, sensual replenishment, and receiving beauty.</p></div>
+            </div>
+          </div>
+
+          <div class="tarot-card-slot" id="cardSlot3" onclick="revealTarotCard(3)">
+            <div class="card-inner">
+              <div class="card-face card-back"><div class="card-back-ornament"><div class="moon-glyph">&sext;</div><span>TOUCH TO REVEAL</span><span class="slot-position">III. ANCESTRAL GUIDANCE</span></div></div>
+              <div class="card-face card-front"><div class="revealed-tag">III. SACRED INVITATION</div><h4 class="revealed-name" id="cardName3">The Star</h4><p class="revealed-meaning" id="cardDesc3">Hope restored to your deepest waters. Walk forward unburdened.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+</section>
+
+<!-- SECCIÓN DE RESERVA DIRECTA ABAJO EN LA PÁGINA -->
+<section class="booking-section-inline" id="bookingSection">
+  <div class="container text-center">
+    <span class="sub-heading">SANCTUARY INITIATION</span>
+    <h2 class="serif-title">Claim Your Space</h2>
+    <p class="section-lead">Secure your 1-on-1 Ancestral Tarot & Somatic Session. A 50% deposit confirms your appointment.</p>
+    
+    <div class="booking-card-wrapper mt-4">
+      <div class="booking-card">
+        <h3>Ancestral Tarot & Somatic Guidance</h3>
+        <p class="price-tag">$80 USD <span>(50% deposit: $40)</span></p>
+        <p class="desc">A full 60-minute energetic reading focused on ancestral wisdom, bodily alignment, and current blockages.</p>
+        <button class="btn btn-outline-nav w-100" onclick="openBookingModal('Tarot')">SECURE APPOINTMENT VIA CALENDLY</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- TAROT SESSIONS -->
+      <div class="tarot-offerings-grid">
+        <div class="tarot-service-card">
+          <h3>Ancestral Mirror Reading</h3>
+          <p class="service-desc">A deep dive into your current transition, clearing illusions and illuminating intuitive pathways with ancestral guidance.</p>
+          <div class="service-details">
+            <span><strong>Duration:</strong> 45 Minutes</span>
+            <span><strong>Format:</strong> Virtual (Zoom) or Audio Archive</span>
+            <span class="service-price">$75.00 USD</span>
+          </div>
+          <button class="btn btn-gold-outline w-full" onclick="openBookingModal('Tarot: Ancestral Mirror Reading')">BOOK TAROT READING</button>
+        </div>
+
+        <div class="tarot-service-card featured-service">
+          <span class="service-highlight">MOST SOUL-EXPANSIVE</span>
+          <h3>Sovereignty &amp; Alignment Reading</h3>
+          <p class="service-desc">Full 10-card ceremonial spread examining career, soul ties, creative elevation, and spiritual boundaries.</p>
+          <div class="service-details">
+            <span><strong>Duration:</strong> 75 Minutes</span>
+            <span><strong>Format:</strong> Live Video + Ritual Prescriptions</span>
+            <span class="service-price">$110.00 USD</span>
+          </div>
+          <button class="btn btn-gold w-full" onclick="openBookingModal('Tarot: Sovereignty &amp; Alignment Reading')">BOOK FULL CEREMONY</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="site-footer">
+    <div class="section-container footer-grid">
+      <div class="footer-col-brand">
+        <span class="footer-logo">DOZA KINGDOM</span>
+        <p class="footer-motto">HEALING, HOPE &amp; HARMONY TO THE HOOD.</p>
+        <p class="footer-copy-text">A modern sovereign kingdom honoring the beauty, resilience, and spiritual restoration of our community.</p>
+        <div class="payment-badges-row">
+          <span class="badge-pill">APPLE PAY</span>
+          <span class="badge-pill">PAYPAL</span>
+          <span class="badge-pill">VISA / MASTERCARD</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARIES</h6>
+        <ul>
+          <li><a href="shop.html">The Shop (Waistbeads)</a></li>
+          <li><a href="temple.html">The Temple (Yoga)</a></li>
+          <li><a href="cards.html">The Cards (Tarot)</a></li>
+          <li><a href="community.html">The Community (Events)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARY CARE</h6>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openMeasureModal()">How to Measure Guide</a></li>
+          <li><a href="javascript:void(0)" onclick="openBookingModal('General')">Schedule Consultation</a></li>
+          <li><a href="about.html">About Turquoise</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-newsletter">
+        <h6>THE ROYAL DISPATCH</h6>
+        <p>Receive ancestral astrology updates, waistbead releases, and community circle invitations directly to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Blessings! You are now subscribed to the Royal Dispatch.');">
+          <input type="email" placeholder="Enter your sacred email..." required>
+          <button type="submit" class="btn btn-gold">JOIN US</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="section-container bottom-bar-flex">
+        <span>&copy; 2026 DOZA KINGDOM. All Rights Reserved. Handcrafted with reverence.</span>
+        <div class="legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Shipping &amp; Custom Sizing Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: GUÍA DE MEDIDAS -->
+  <div class="modal-overlay" id="measureModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="serif-title">HOW TO MEASURE FOR WAISTBEADS</h3>
+        <button class="modal-close" onclick="closeModal('measureModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-lead">Because every Doza Kingdom waistbead is handcrafted specifically to your body, exact measurements are required. There is no one &ldquo;right&rdquo; place to wear them; you choose where they sit on your altar.</p>
+        <div class="steps-flow">
+          <div class="step-card"><span class="step-number">1</span><h4>Decide Your Placement</h4><p>High waist, natural mid-waist, or low hips.</p></div>
+          <div class="step-card"><span class="step-number">2</span><h4>Relax Your Belly</h4><p>Stand naturally. Do NOT suck in your stomach.</p></div>
+          <div class="step-card"><span class="step-number">3</span><h4>Measure Against Bare Skin</h4><p>Use a flexible measuring tape directly against skin.</p></div>
+          <div class="step-card"><span class="step-number">4</span><h4>Double Check Your Number</h4><p>Enter the exact inches or centimeters on the product.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-gold w-full" onclick="closeModal('measureModal')">I HAVE MY MEASUREMENT</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CARRITO LATERAL (DRAWER) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>YOUR SACRED ADORNMENT</h3>
+        <span class="cart-counter-text" id="cartCountTitle">(0 items)</span>
+      </div>
+      <button class="close-cart-btn" onclick="toggleCartDrawer()">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span>SUBTOTAL</span><span class="cart-subtotal-price" id="cartSubtotal">$0.00 USD</span></div>
+      <div class="checkout-actions">
+        <button class="btn btn-express-apple" onclick="processCheckoutExpress('Apple Pay')">Buy with Apple Pay</button>
+        <button class="btn btn-express-paypal" onclick="processCheckoutExpress('PayPal')">Checkout with PayPal</button>
+        <button class="btn btn-gold w-full mt-2" onclick="processFullCheckout()">SECURE CHECKOUT &rarr;</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shop (Waistbeads) | Doza Kingdom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="shop-page-wrapper">
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>HEALING, HOPE &amp; HARMONY TO THE HOOD &bull; HANDCRAFTED CUSTOM WAISTBEADS &bull; US NATIONWIDE SHIPPING</span>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
+      <nav class="nav-links">
+        <a href="shop.html" class="nav-item active">THE SHOP</a><a href="temple.html" class="nav-item">THE TEMPLE</a><a href="cards.html" class="nav-item">THE CARDS</a><a href="community.html" class="nav-item">THE COMMUNITY</a><a href="about.html" class="nav-item">ABOUT</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
+        <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL FULLSCREEN -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="brand-logo">DOZA</span>
+      <button class="close-btn" id="closeMobileMenu">&times;</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="shop.html" class="mobile-nav-link">THE SHOP</a><a href="temple.html" class="mobile-nav-link">THE TEMPLE</a><a href="cards.html" class="mobile-nav-link">THE CARDS</a><a href="community.html" class="mobile-nav-link">THE COMMUNITY</a><a href="about.html" class="mobile-nav-link">ABOUT</a>
+      <button class="btn btn-gold w-full mt-4" onclick="openBookingModal('General'); toggleMobileMenu(false);">BOOK EXPERIENCE</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="section-container">
+      <div class="editorial-header">
+        <div>
+          <span class="sub-heading">REALM I &bull; ADORNMENT WITH INTENTION</span>
+          <h1 class="serif-title">ADORN YOUR BODY.<br><span class="italic-serif">HONOR YOUR JOURNEY.</span></h1>
+        </div>
+        <div>
+          <p>Handcrafted waistbeads created with intention, beauty, story, and individuality. Every strand is custom-tailored to your exact measurements.</p>
+          <button class="text-link-btn" onclick="openMeasureModal()">HOW TO MEASURE YOUR WAIST (GUIDE) &rarr;</button>
+        </div>
+      </div>
+
+      <div class="curated-products-grid">
+        <!-- The Root -->
+        <article class="product-editorial-card">
+          <div class="product-media">
+            <span class="product-badge">BESTSELLER</span>
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop" alt="The Root Waistbead">
+            <button class="quick-view-overlay" onclick="openProductModal('root-strand')">READ STRAND STORY &rarr;</button>
+          </div>
+          <div class="product-meta">
+            <div class="product-heading-row"><h3 class="product-title">THE ROOT</h3><span class="product-price">$58.00 USD</span></div>
+            <p class="product-intention">&ldquo;For grounding. For remembering. For coming home to yourself.&rdquo;</p>
+            <div class="custom-sizing-block">
+              <div class="sizing-label-row"><label for="m-root">CUSTOM SIZING <span class="required-asterisk">*</span></label><span class="unit-toggle" onclick="toggleMeasurementUnits('root-strand')">Switch unit (<span id="unit-label-root-strand">CM</span>)</span></div>
+              <div class="input-with-unit"><input type="number" id="m-root" placeholder="Waist (e.g. 32)"><span class="unit-indicator" id="unit-root-strand">IN</span></div>
+            </div>
+            <button class="btn btn-shop-add" onclick="handleAddToCart('root-strand', 'THE ROOT', 58, 'm-root', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1000&auto=format&fit=crop')">ADD CUSTOM STRAND TO BAG</button>
+          </div>
+        </article>
+
+        <!-- The Solar Bloom -->
+        <article class="product-editorial-card">
+          <div class="product-media">
+            <span class="product-badge">CEREMONIAL</span>
+            <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000&auto=format&fit=crop" alt="The Solar Bloom Waistbead">
+            <button class="quick-view-overlay" onclick="openProductModal('solar-bloom')">READ STRAND STORY &rarr;</button>
+          </div>
+          <div class="product-meta">
+            <div class="product-heading-row"><h3 class="product-title">THE SOLAR BLOOM</h3><span class="product-price">$64.00 USD</span></div>
+            <p class="product-intention">&ldquo;For stepping boldly into your personal sovereignty and radiant joy.&rdquo;</p>
+            <div class="custom-sizing-block">
+              <div class="sizing-label-row"><label for="m-solar">CUSTOM SIZING <span class="required-asterisk">*</span></label><span class="unit-toggle" onclick="toggleMeasurementUnits('solar-bloom')">Switch unit (<span id="unit-label-solar-bloom">CM</span>)</span></div>
+              <div class="input-with-unit"><input type="number" id="m-solar" placeholder="Waist (e.g. 30)"><span class="unit-indicator" id="unit-solar-bloom">IN</span></div>
+            </div>
+            <button class="btn btn-shop-add" onclick="handleAddToCart('solar-bloom', 'THE SOLAR BLOOM', 64, 'm-solar', 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000&auto=format&fit=crop')">ADD CUSTOM STRAND TO BAG</button>
+          </div>
+        </article>
+
+        <!-- Crown Silence -->
+        <article class="product-editorial-card">
+          <div class="product-media">
+            <span class="product-badge">INTUITIVE</span>
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop" alt="Crown Silence Waistbead">
+            <button class="quick-view-overlay" onclick="openProductModal('crown-silence')">READ STRAND STORY &rarr;</button>
+          </div>
+          <div class="product-meta">
+            <div class="product-heading-row"><h3 class="product-title">CROWN SILENCE</h3><span class="product-price">$72.00 USD</span></div>
+            <p class="product-intention">&ldquo;For stillness, psychic discernment, and spiritual sovereignty.&rdquo;</p>
+            <div class="custom-sizing-block">
+              <div class="sizing-label-row"><label for="m-crown">CUSTOM SIZING <span class="required-asterisk">*</span></label><span class="unit-toggle" onclick="toggleMeasurementUnits('crown-silence')">Switch unit (<span id="unit-label-crown-silence">CM</span>)</span></div>
+              <div class="input-with-unit"><input type="number" id="m-crown" placeholder="Waist (e.g. 34)"><span class="unit-indicator" id="unit-crown-silence">IN</span></div>
+            </div>
+            <button class="btn btn-shop-add" onclick="handleAddToCart('crown-silence', 'CROWN SILENCE', 72, 'm-crown', 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=1000&auto=format&fit=crop')">ADD CUSTOM STRAND TO BAG</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DETALLE PRODUCTO -->
+  <div class="modal-overlay" id="productDetailModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 class="serif-title" id="modalProductName">PRODUCT STORY</h3>
+        <button class="modal-close" onclick="closeModal('productDetailModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="product-modal-grid">
+          <div class="product-modal-media"><img id="modalProductImg" src="" alt="Strand closeup"></div>
+          <div class="product-modal-info">
+            <span class="modal-price" id="modalProductPrice">$0.00 USD</span>
+            <div class="story-divider"></div>
+            <h4>THE STORY &amp; INTENTION</h4>
+            <p id="modalProductStory">Story details...</p>
+            <h4>MATERIALS</h4>
+            <ul class="materials-list" id="modalProductMaterials"></ul>
+            <div class="custom-sizing-block mt-4">
+              <label>YOUR WAIST SIZE (<span id="modalUnitBadge">IN</span>):</label>
+              <input type="number" id="modalCustomMeasure" placeholder="e.g. 32" class="modal-input">
+            </div>
+            <button class="btn btn-gold w-full mt-4" id="modalAddToCartBtn">ADD TO SACRED BAG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="site-footer">
+    <div class="section-container footer-grid">
+      <div class="footer-col-brand">
+        <span class="footer-logo">DOZA KINGDOM</span>
+        <p class="footer-motto">HEALING, HOPE &amp; HARMONY TO THE HOOD.</p>
+        <p class="footer-copy-text">A modern sovereign kingdom honoring the beauty, resilience, and spiritual restoration of our community.</p>
+        <div class="payment-badges-row">
+          <span class="badge-pill">APPLE PAY</span>
+          <span class="badge-pill">PAYPAL</span>
+          <span class="badge-pill">VISA / MASTERCARD</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARIES</h6>
+        <ul>
+          <li><a href="shop.html">The Shop (Waistbeads)</a></li>
+          <li><a href="temple.html">The Temple (Yoga)</a></li>
+          <li><a href="cards.html">The Cards (Tarot)</a></li>
+          <li><a href="community.html">The Community (Events)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARY CARE</h6>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openMeasureModal()">How to Measure Guide</a></li>
+          <li><a href="javascript:void(0)" onclick="openBookingModal('General')">Schedule Consultation</a></li>
+          <li><a href="about.html">About Turquoise</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-newsletter">
+        <h6>THE ROYAL DISPATCH</h6>
+        <p>Receive ancestral astrology updates, waistbead releases, and community circle invitations directly to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Blessings! You are now subscribed to the Royal Dispatch.');">
+          <input type="email" placeholder="Enter your sacred email..." required>
+          <button type="submit" class="btn btn-gold">JOIN US</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="section-container bottom-bar-flex">
+        <span>&copy; 2026 DOZA KINGDOM. All Rights Reserved. Handcrafted with reverence.</span>
+        <div class="legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Shipping &amp; Custom Sizing Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: GUÍA DE MEDIDAS -->
+  <div class="modal-overlay" id="measureModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="serif-title">HOW TO MEASURE FOR WAISTBEADS</h3>
+        <button class="modal-close" onclick="closeModal('measureModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-lead">Because every Doza Kingdom waistbead is handcrafted specifically to your body, exact measurements are required. There is no one &ldquo;right&rdquo; place to wear them; you choose where they sit on your altar.</p>
+        <div class="steps-flow">
+          <div class="step-card"><span class="step-number">1</span><h4>Decide Your Placement</h4><p>High waist, natural mid-waist, or low hips.</p></div>
+          <div class="step-card"><span class="step-number">2</span><h4>Relax Your Belly</h4><p>Stand naturally. Do NOT suck in your stomach.</p></div>
+          <div class="step-card"><span class="step-number">3</span><h4>Measure Against Bare Skin</h4><p>Use a flexible measuring tape directly against skin.</p></div>
+          <div class="step-card"><span class="step-number">4</span><h4>Double Check Your Number</h4><p>Enter the exact inches or centimeters on the product.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-gold w-full" onclick="closeModal('measureModal')">I HAVE MY MEASUREMENT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: RESERVAS UNIFICADAS -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="serif-title">BOOK YOUR SACRED EXPERIENCE</h3>
+        <button class="modal-close" onclick="closeModal('bookingModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="form-group">
+            <label for="bookingService">SELECT SERVICE</label>
+            <select id="bookingService" required>
+              <option value="">-- Choose Experience --</option>
+              <optgroup label="The Temple (Yoga &amp; Movement)">
+                <option value="Yoga: Somatic Nervous System Release">Somatic Nervous System Release ($45)</option>
+                <option value="Yoga: Sacred Grounding Flow">Sacred Grounding Flow ($55)</option>
+                <option value="Yoga: 1-on-1 Somatic Portal">1:1 Somatic Portal ($120)</option>
+              </optgroup>
+              <optgroup label="The Cards (Tarot Readings)">
+                <option value="Tarot: Ancestral Mirror Reading">Ancestral Mirror Reading ($75)</option>
+                <option value="Tarot: Sovereignty &amp; Alignment Reading">Sovereignty &amp; Alignment Reading ($110)</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group half"><label for="bookingDate">DATE</label><input type="date" id="bookingDate" required></div>
+            <div class="form-group half"><label for="bookingTime">TIME (EST)</label><select id="bookingTime"><option value="11:00 AM">11:00 AM EST</option><option value="02:00 PM">02:00 PM EST</option><option value="05:30 PM">05:30 PM EST</option></select></div>
+          </div>
+          <div class="form-group"><label for="clientName">YOUR NAME</label><input type="text" id="clientName" required placeholder="Full Name"></div>
+          <div class="form-group"><label for="clientEmail">YOUR EMAIL</label><input type="email" id="clientEmail" required placeholder="name@email.com"></div>
+          <button type="submit" class="btn btn-gold w-full mt-3">CONFIRM RESERVATION</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARRITO LATERAL (DRAWER) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>YOUR SACRED ADORNMENT</h3>
+        <span class="cart-counter-text" id="cartCountTitle">(0 items)</span>
+      </div>
+      <button class="close-cart-btn" onclick="toggleCartDrawer()">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span>SUBTOTAL</span><span class="cart-subtotal-price" id="cartSubtotal">$0.00 USD</span></div>
+      <div class="checkout-actions">
+        <button class="btn btn-express-apple" onclick="processCheckoutExpress('Apple Pay')">Buy with Apple Pay</button>
+        <button class="btn btn-express-paypal" onclick="processCheckoutExpress('PayPal')">Checkout with PayPal</button>
+        <button class="btn btn-gold w-full mt-2" onclick="processFullCheckout()">SECURE CHECKOUT &rarr;</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

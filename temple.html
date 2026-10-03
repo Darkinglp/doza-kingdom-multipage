@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Temple (Yoga &amp; Movement) | Doza Kingdom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+<body class="temple-page-wrapper">
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>HEALING, HOPE &amp; HARMONY TO THE HOOD &bull; HANDCRAFTED CUSTOM WAISTBEADS &bull; US NATIONWIDE SHIPPING</span>
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
+      <nav class="nav-links">
+        <a href="shop.html" class="nav-item">THE SHOP</a><a href="temple.html" class="nav-item active">THE TEMPLE</a><a href="cards.html" class="nav-item">THE CARDS</a><a href="community.html" class="nav-item">THE COMMUNITY</a><a href="about.html" class="nav-item">ABOUT</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
+        <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cartCount">0</span>
+        </button>
+        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL FULLSCREEN -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="brand-logo">DOZA</span>
+      <button class="close-btn" id="closeMobileMenu">&times;</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="shop.html" class="mobile-nav-link">THE SHOP</a><a href="temple.html" class="mobile-nav-link">THE TEMPLE</a><a href="cards.html" class="mobile-nav-link">THE CARDS</a><a href="community.html" class="mobile-nav-link">THE COMMUNITY</a><a href="about.html" class="mobile-nav-link">ABOUT</a>
+      <button class="btn btn-gold w-full mt-4" onclick="openBookingModal('General'); toggleMobileMenu(false);">BOOK EXPERIENCE</button>
+    </div>
+  </div>
+
+  <main>
+ <!-- SECCIÓN TEMPLE HERO (ESTILO IMAGEN) -->
+<!-- TEMPLE HERO SANCTUARY (ABOVE THE FOLD - US LUXURY MARKET) -->
+<section class="temple-zen-hero">
+  <div class="container temple-zen-container">
+    
+    <!-- Encabezado editorial superior dividido -->
+    <div class="temple-zen-header">
+      <div class="zen-header-left">
+        <span class="zen-kicker">SOMATIC YOGA & MEDITATION</span>
+        <h1 class="zen-title">Connect with Your Essence</h1>
+        <p class="zen-desc">
+          A restorative sanctuary practice blending conscious breathwork, somatic movement, and nervous system regulation to release stored tension and realign body, mind, and spirit.
+        </p>
+      </div>
+
+      <div class="zen-header-divider"></div>
+
+      <div class="zen-header-right">
+        <!-- Ícono sagrado de Loto -->
+        <svg class="zen-lotus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 3c-1.5 3-4 6-4 9a4 4 0 0 0 8 0c0-3-2.5-6-4-9z"/>
+          <path d="M12 12c-2.5-2-6-3-8-1a5 5 0 0 0 6 7c2-1 2-6 2-6z"/>
+          <path d="M12 12c2.5-2 6-3 8-1a5 5 0 0 1-6 7c-2-1-2-6-2-6z"/>
+        </svg>
+        <ul class="zen-pillars">
+          <li>BALANCE YOUR FREQUENCY</li>
+          <li>RECONNECT INWARD</li>
+          <li>ANCHOR IN THE PRESENT</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Caja de cristal compacto: Explicación clave + Depósito + Botón BOOK US visible de inmediato -->
+    <div class="zen-booking-box">
+      <div class="zen-session-info-bar">
+        <span class="info-pill"><strong>SESSION:</strong> 60 MIN SACRED 1-ON-1</span>
+        <span class="info-pill-divider">•</span>
+        <span class="info-pill"><strong>INVESTMENT:</strong> $80 USD</span>
+        <span class="info-pill-divider">•</span>
+        <span class="info-pill highlight-gold">*50% DEPOSIT ($40) SECURES YOUR SANCTUARY MAT</span>
+      </div>
+      
+      <div class="zen-action-wrapper">
+        <button class="btn btn-zen-book" onclick="openBookingModal('Yoga')">
+          <span>BOOK US</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+      
+      <p class="zen-instant-note">
+        Instant booking & calendar sync via Calendly • Supports Apple Pay, Credit Card & PayPal
+      </p>
+    </div>
+
+    <!-- Frase mística inferior con líneas doradas -->
+    <div class="zen-footer-quote">
+      <span class="quote-line"></span>
+      <p class="quote-text">YOUR WELLNESS IS AN ACT OF SACRED POWER</p>
+      <span class="quote-line"></span>
+    </div>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="site-footer">
+    <div class="section-container footer-grid">
+      <div class="footer-col-brand">
+        <span class="footer-logo">DOZA KINGDOM</span>
+        <p class="footer-motto">HEALING, HOPE &amp; HARMONY TO THE HOOD.</p>
+        <p class="footer-copy-text">A modern sovereign kingdom honoring the beauty, resilience, and spiritual restoration of our community.</p>
+        <div class="payment-badges-row">
+          <span class="badge-pill">APPLE PAY</span>
+          <span class="badge-pill">PAYPAL</span>
+          <span class="badge-pill">VISA / MASTERCARD</span>
+        </div>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARIES</h6>
+        <ul>
+          <li><a href="shop.html">The Shop (Waistbeads)</a></li>
+          <li><a href="temple.html">The Temple (Yoga)</a></li>
+          <li><a href="cards.html">The Cards (Tarot)</a></li>
+          <li><a href="community.html">The Community (Events)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-links">
+        <h6>SANCTUARY CARE</h6>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="openMeasureModal()">How to Measure Guide</a></li>
+          <li><a href="javascript:void(0)" onclick="openBookingModal('General')">Schedule Consultation</a></li>
+          <li><a href="about.html">About Turquoise</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-newsletter">
+        <h6>THE ROYAL DISPATCH</h6>
+        <p>Receive ancestral astrology updates, waistbead releases, and community circle invitations directly to your inbox.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Blessings! You are now subscribed to the Royal Dispatch.');">
+          <input type="email" placeholder="Enter your sacred email..." required>
+          <button type="submit" class="btn btn-gold">JOIN US</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="section-container bottom-bar-flex">
+        <span>&copy; 2026 DOZA KINGDOM. All Rights Reserved. Handcrafted with reverence.</span>
+        <div class="legal-links">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Shipping &amp; Custom Sizing Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: GUÍA DE MEDIDAS -->
+  <div class="modal-overlay" id="measureModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="serif-title">HOW TO MEASURE FOR WAISTBEADS</h3>
+        <button class="modal-close" onclick="closeModal('measureModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-lead">Because every Doza Kingdom waistbead is handcrafted specifically to your body, exact measurements are required. There is no one &ldquo;right&rdquo; place to wear them; you choose where they sit on your altar.</p>
+        <div class="steps-flow">
+          <div class="step-card"><span class="step-number">1</span><h4>Decide Your Placement</h4><p>High waist, natural mid-waist, or low hips.</p></div>
+          <div class="step-card"><span class="step-number">2</span><h4>Relax Your Belly</h4><p>Stand naturally. Do NOT suck in your stomach.</p></div>
+          <div class="step-card"><span class="step-number">3</span><h4>Measure Against Bare Skin</h4><p>Use a flexible measuring tape directly against skin.</p></div>
+          <div class="step-card"><span class="step-number">4</span><h4>Double Check Your Number</h4><p>Enter the exact inches or centimeters on the product.</p></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-gold w-full" onclick="closeModal('measureModal')">I HAVE MY MEASUREMENT</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CARRITO LATERAL (DRAWER) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>YOUR SACRED ADORNMENT</h3>
+        <span class="cart-counter-text" id="cartCountTitle">(0 items)</span>
+      </div>
+      <button class="close-cart-btn" onclick="toggleCartDrawer()">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cartItemsList"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row"><span>SUBTOTAL</span><span class="cart-subtotal-price" id="cartSubtotal">$0.00 USD</span></div>
+      <div class="checkout-actions">
+        <button class="btn btn-express-apple" onclick="processCheckoutExpress('Apple Pay')">Buy with Apple Pay</button>
+        <button class="btn btn-express-paypal" onclick="processCheckoutExpress('PayPal')">Checkout with PayPal</button>
+        <button class="btn btn-gold w-full mt-2" onclick="processFullCheckout()">SECURE CHECKOUT &rarr;</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
