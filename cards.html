@@ -13,33 +13,71 @@
 </head>
 <body class="cards-page-wrapper">
   <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar">
-    <span>HEALING, HOPE &amp; HARMONY TO THE HOOD &bull; HANDCRAFTED CUSTOM WAISTBEADS &bull; US NATIONWIDE SHIPPING</span>
-  </div>
-
-  <!-- NAVEGACIÓN PRINCIPAL -->
-  <header class="site-header" id="navbar">
-    <div class="header-container">
-      <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
-      <nav class="nav-links">
-        <a href="shop.html" class="nav-item">THE SHOP</a><a href="temple.html" class="nav-item">THE TEMPLE</a><a href="cards.html" class="nav-item active">THE CARDS</a><a href="community.html" class="nav-item">THE COMMUNITY</a><a href="about.html" class="nav-item">ABOUT</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
-        <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span class="cart-count-badge" id="cartCount">0</span>
-        </button>
-        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+ <!-- ANNOUNCEMENT BAR (LUXURY INFINITE TICKER) -->
+<div class="announcement-bar">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>HEALING, HOPE & HARMONY TO THE HOOD</span>
+      <span class="marquee-star">✦</span>
+      <span>HANDCRAFTED CUSTOM WAISTBEADS</span>
+      <span class="marquee-star">✦</span>
+      <span>US NATIONWIDE SHIPPING</span>
+      <span class="marquee-star">✦</span>
+      <span>SOMATIC SANCTUARY & ANCESTRAL TAROT</span>
+      <span class="marquee-star">✦</span>
+      <span>DOZA KINGDOM APOTHECARY</span>
+      <span class="marquee-star">✦</span>
     </div>
-  </header>
+    <div class="marquee-content" aria-hidden="true">
+      <span>HEALING, HOPE & HARMONY TO THE HOOD</span>
+      <span class="marquee-star">✦</span>
+      <span>HANDCRAFTED CUSTOM WAISTBEADS</span>
+      <span class="marquee-star">✦</span>
+      <span>US NATIONWIDE SHIPPING</span>
+      <span class="marquee-star">✦</span>
+      <span>SOMATIC SANCTUARY & ANCESTRAL TAROT</span>
+      <span class="marquee-star">✦</span>
+      <span>DOZA KINGDOM APOTHECARY</span>
+      <span class="marquee-star">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVEGACIÓN PRINCIPAL -->
+<header class="site-header" id="navbar">
+  <div class="header-container">
+    <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
+
+    <nav class="nav-links">
+      <a href="shop.html" class="nav-item">THE SHOP</a>
+      <a href="temple.html" class="nav-item">THE TEMPLE</a>
+      <a href="cards.html" class="nav-item">THE CARDS</a>
+      <a href="community.html" class="nav-item">THE COMMUNITY</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="about.html" class="nav-about-mystic">
+        <span class="about-glyph">✧</span>
+        <span class="about-text">ABOUT</span>
+      </a>
+
+      <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
+      
+      <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-count-badge" id="cartCount">0</span>
+      </button>
+
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
   <!-- MENÚ MÓVIL FULLSCREEN -->
   <div class="mobile-menu-overlay" id="mobileMenu">
@@ -93,50 +131,52 @@
      
 </section>
 
-<!-- SECCIÓN DE RESERVA DIRECTA ABAJO EN LA PÁGINA -->
-<section class="booking-section-inline" id="bookingSection">
+<!-- SECCIÓN DE RESERVA ÚNICA (TAROT SANCTUARY) -->
+<section class="tarot-booking-sanctuary" id="bookingSection">
   <div class="container text-center">
     <span class="sub-heading">SANCTUARY INITIATION</span>
-    <h2 class="serif-title">Claim Your Space</h2>
-    <p class="section-lead">Secure your 1-on-1 Ancestral Tarot & Somatic Session. A 50% deposit confirms your appointment.</p>
-    
-    <div class="booking-card-wrapper mt-4">
-      <div class="booking-card">
-        <h3>Ancestral Tarot & Somatic Guidance</h3>
-        <p class="price-tag">$80 USD <span>(50% deposit: $40)</span></p>
-        <p class="desc">A full 60-minute energetic reading focused on ancestral wisdom, bodily alignment, and current blockages.</p>
-        <button class="btn btn-outline-nav w-100" onclick="openBookingModal('Tarot')">SECURE APPOINTMENT VIA CALENDLY</button>
+    <h2 class="serif-title mb-3">Claim Your Space</h2>
+    <p class="section-lead mx-auto mb-5">
+      An intimate energetic reading blending ancestral insight, intuitive clarity, and somatic grounding.
+    </p>
+
+    <!-- Caja única de reserva centrada -->
+    <div class="tarot-single-card">
+      <span class="service-kicker">SIGNATURE ORACLE READING</span>
+      <h3 class="service-title">Ancestral Tarot & Somatic Guidance</h3>
+      
+      <div class="service-meta-tags">
+        <span>60 MINUTES</span>
+        <span class="meta-dot">•</span>
+        <span>1-ON-1 VIRTUAL SANCTUARY</span>
       </div>
+
+      <p class="service-description">
+        A deep dive into your current energetic season. We clear illusions, decode subconscious patterns, and ground ancestral wisdom directly into your physical awareness.
+      </p>
+
+      <!-- Inversión y depósito del 50% -->
+      <div class="tarot-price-pill">
+        <div class="price-main">
+          <span class="price-title">TOTAL EXCHANGE</span>
+          <span class="price-num">$80 USD</span>
+        </div>
+        <p class="deposit-detail">
+          *A <strong>50% deposit ($40 USD)</strong> is required upon booking to secure your sacred appointment. Balance due the day of the session.
+        </p>
+      </div>
+
+      <!-- Botón directo a Calendly -->
+      <button class="btn btn-gold w-100" onclick="openBookingModal('Tarot')">
+        SECURE YOUR READING — 50% DEPOSIT
+      </button>
+
+      <span class="secure-tag">
+        Instant calendar confirmation via Calendly • Apple Pay, Card & PayPal accepted
+      </span>
     </div>
   </div>
 </section>
-
-      <!-- TAROT SESSIONS -->
-      <div class="tarot-offerings-grid">
-        <div class="tarot-service-card">
-          <h3>Ancestral Mirror Reading</h3>
-          <p class="service-desc">A deep dive into your current transition, clearing illusions and illuminating intuitive pathways with ancestral guidance.</p>
-          <div class="service-details">
-            <span><strong>Duration:</strong> 45 Minutes</span>
-            <span><strong>Format:</strong> Virtual (Zoom) or Audio Archive</span>
-            <span class="service-price">$75.00 USD</span>
-          </div>
-          <button class="btn btn-gold-outline w-full" onclick="openBookingModal('Tarot: Ancestral Mirror Reading')">BOOK TAROT READING</button>
-        </div>
-
-        <div class="tarot-service-card featured-service">
-          <span class="service-highlight">MOST SOUL-EXPANSIVE</span>
-          <h3>Sovereignty &amp; Alignment Reading</h3>
-          <p class="service-desc">Full 10-card ceremonial spread examining career, soul ties, creative elevation, and spiritual boundaries.</p>
-          <div class="service-details">
-            <span><strong>Duration:</strong> 75 Minutes</span>
-            <span><strong>Format:</strong> Live Video + Ritual Prescriptions</span>
-            <span class="service-price">$110.00 USD</span>
-          </div>
-          <button class="btn btn-gold w-full" onclick="openBookingModal('Tarot: Sovereignty &amp; Alignment Reading')">BOOK FULL CEREMONY</button>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- PIE DE PÁGINA (FOOTER) -->

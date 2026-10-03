@@ -12,35 +12,72 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body class="temple-page-wrapper">
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar">
-    <span>HEALING, HOPE &amp; HARMONY TO THE HOOD &bull; HANDCRAFTED CUSTOM WAISTBEADS &bull; US NATIONWIDE SHIPPING</span>
-  </div>
 
-  <!-- NAVEGACIÓN PRINCIPAL -->
-  <header class="site-header" id="navbar">
-    <div class="header-container">
-      <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
-      <nav class="nav-links">
-        <a href="shop.html" class="nav-item">THE SHOP</a><a href="temple.html" class="nav-item active">THE TEMPLE</a><a href="cards.html" class="nav-item">THE CARDS</a><a href="community.html" class="nav-item">THE COMMUNITY</a><a href="about.html" class="nav-item">ABOUT</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
-        <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span class="cart-count-badge" id="cartCount">0</span>
-        </button>
-        <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+<!-- ANNOUNCEMENT BAR (LUXURY INFINITE TICKER) -->
+<div class="announcement-bar">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span>HEALING, HOPE & HARMONY TO THE HOOD</span>
+      <span class="marquee-star">✦</span>
+      <span>HANDCRAFTED CUSTOM WAISTBEADS</span>
+      <span class="marquee-star">✦</span>
+      <span>US NATIONWIDE SHIPPING</span>
+      <span class="marquee-star">✦</span>
+      <span>SOMATIC SANCTUARY & ANCESTRAL TAROT</span>
+      <span class="marquee-star">✦</span>
+      <span>DOZA KINGDOM APOTHECARY</span>
+      <span class="marquee-star">✦</span>
     </div>
-  </header>
+    <div class="marquee-content" aria-hidden="true">
+      <span>HEALING, HOPE & HARMONY TO THE HOOD</span>
+      <span class="marquee-star">✦</span>
+      <span>HANDCRAFTED CUSTOM WAISTBEADS</span>
+      <span class="marquee-star">✦</span>
+      <span>US NATIONWIDE SHIPPING</span>
+      <span class="marquee-star">✦</span>
+      <span>SOMATIC SANCTUARY & ANCESTRAL TAROT</span>
+      <span class="marquee-star">✦</span>
+      <span>DOZA KINGDOM APOTHECARY</span>
+      <span class="marquee-star">✦</span>
+    </div>
+  </div>
+</div>
 
+<!-- NAVEGACIÓN PRINCIPAL -->
+<header class="site-header" id="navbar">
+  <div class="header-container">
+    <a href="index.html" class="brand-logo">DOZA <span>KINGDOM</span></a>
+
+    <nav class="nav-links">
+      <a href="shop.html" class="nav-item">THE SHOP</a>
+      <a href="temple.html" class="nav-item">THE TEMPLE</a>
+      <a href="cards.html" class="nav-item">THE CARDS</a>
+      <a href="community.html" class="nav-item">THE COMMUNITY</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="about.html" class="nav-about-mystic">
+        <span class="about-glyph">✧</span>
+        <span class="about-text">ABOUT</span>
+      </a>
+
+      <button class="btn btn-outline-nav" onclick="openBookingModal('General')">BOOK NOW</button>
+      
+      <button class="cart-trigger-btn" onclick="toggleCartDrawer()" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="cart-count-badge" id="cartCount">0</span>
+      </button>
+
+      <button class="mobile-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
   <!-- MENÚ MÓVIL FULLSCREEN -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <div class="mobile-menu-header">

@@ -322,6 +322,171 @@ button, input, select, textarea { font-family: inherit; font-size: 1rem; }
   from { opacity: 0; transform: translateY(15px); }  
   to { opacity: 1; transform: translateY(0); }  
 }  
+
+/* ==========================================================================
+   THE CARDS — RESTAURACIÓN DEL MAZO Y TAPETE INTERACTIVO
+   ========================================================================== */
+.cards-page-wrapper {
+  background-color: var(--cards-bg);
+  background-image: radial-gradient(circle at 50% 20%, #1a152e 0%, var(--cards-bg) 75%);
+  color: #fff;
+}
+
+.interactive-tarot-deck {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--cards-border);
+  padding: 3.5rem 2rem;
+  border-radius: 6px;
+  max-width: 1050px;
+  margin: 3rem auto 5rem;
+}
+
+.deck-prompt-bar {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--cards-gold);
+  margin-bottom: 2.8rem;
+  text-transform: uppercase;
+}
+
+/* Grilla con las 3 cartas alineadas */
+.tarot-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tarot-card-slot {
+  height: 380px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+/* Estado cuando se da clic y gira */
+.tarot-card-slot.flipped .card-inner,
+.tarot-card-slot.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Reverso de la carta */
+.card-back {
+  background: #111018;
+  border: 1px solid var(--cards-gold);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.card-back-ornament {
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.moon-glyph {
+  font-size: 2.2rem;
+  color: var(--cards-gold);
+  margin-bottom: 0.8rem;
+}
+
+.card-back-ornament span {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--cards-gold);
+}
+
+.slot-position {
+  margin-top: 1.2rem;
+  font-size: 0.65rem !important;
+  color: #888 !important;
+  letter-spacing: 0.15em;
+}
+
+/* Frente de la carta revelada */
+.card-front {
+  background: #191428;
+  border: 1px solid var(--cards-gold);
+  transform: rotateY(180deg);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.revealed-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--cards-gold);
+  margin-bottom: 0.5rem;
+}
+
+.revealed-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.revealed-meaning {
+  font-size: 0.85rem;
+  color: #ccc8d6;
+  line-height: 1.5;
+}
+
+/* Sección de reserva inferior */
+.tarot-offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tarot-service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* En pantallas móviles se apilan */
+@media (max-width: 900px) {
+  .tarot-slots-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+}
   
 /* ==========================================================================  
    UTILIDADES & BOTONES GLOBALES
@@ -359,8 +524,272 @@ button, input, select, textarea { font-family: inherit; font-size: 1rem; }
 .btn-rsvp { background: none; border: none; color: var(--community-accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; cursor: pointer; margin-top: 0.75rem; }  
 .text-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: none; border: none; color: var(--shop-terracotta); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; cursor: pointer; margin-top: 1rem; }  
   
-/* Announcement Bar & Navbar */  
-.announcement-bar { background: #111; color: var(--color-gold); font-size: 0.7rem; letter-spacing: 0.15em; text-align: center; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }  
+/* ==========================================================================
+   ANNOUNCEMENT BAR (EN UNA SOLA LÍNEA INFINITA)
+   ========================================================================== */
+.announcement-bar {
+  background-color: #080706;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 0.55rem 0;
+  display: block; /* Contenedor rígido */
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content;
+  user-select: none;
+}
+
+.marquee-content {
+  display: flex !important;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap !important;
+  animation: marqueeScroll 25s linear infinite;
+  gap: 1.8rem;
+  padding-right: 1.8rem;
+}
+
+.announcement-bar:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-content span {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  white-space: nowrap !important;
+}
+
+.marquee-star {
+  color: rgba(197, 168, 128, 0.6);
+  font-size: 0.65rem !important;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ==========================================================================
+   NAVBAR CON ESPACIO CORRECTO Y ABOUT MÍSTICO
+   ========================================================================== */
+.site-header { 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+  background: rgba(12, 11, 9, 0.95); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+.header-container { 
+  max-width: 1320px; 
+  margin: 0 auto; 
+  padding: 1rem 2rem; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.brand-logo { 
+  font-family: var(--font-serif); 
+  font-size: 1.6rem; 
+  letter-spacing: 0.15em; 
+  font-weight: 600; 
+}
+
+.brand-logo span { 
+  font-weight: 300; 
+  color: var(--color-gold); 
+}
+
+/* Menú central solo con reinos */
+.nav-links { 
+  display: flex; 
+  gap: 2.5rem; 
+}
+
+.nav-item { 
+  font-size: 0.78rem; 
+  letter-spacing: 0.18em; 
+  color: #c0bbb4; 
+  font-weight: 500; 
+  position: relative;
+  padding: 0.2rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active { 
+  color: var(--color-gold); 
+}
+
+/* Bloque derecho con suficiente holgura */
+.nav-actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 1.8rem; /* Separa About, Book Now y el carrito */
+}
+
+/* ABOUT MÍSTICO */
+.nav-about-mystic {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
+  color: #dfd8cf;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+  transition: all 0.3s ease;
+}
+
+.about-glyph {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  display: inline-block;
+  animation: mysticPulse 3.5s ease-in-out infinite;
+}
+
+.nav-about-mystic:hover {
+  color: #ffffff;
+}
+
+.nav-about-mystic:hover .about-glyph {
+  transform: rotate(45deg) scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(197, 168, 128, 0.9));
+}
+
+@keyframes mysticPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.1); filter: drop-shadow(0 0 4px rgba(197, 168, 128, 0.6)); }
+}
+
+/* ==========================================================================
+   TAROT BOOKING — OFRENDA ÚNICA CENTRADA
+   ========================================================================== */
+.tarot-booking-sanctuary {
+  padding: 5rem 1.5rem 8rem;
+  background-color: var(--cards-bg);
+  position: relative;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.tarot-single-card {
+  max-width: 620px;
+  margin: 0 auto;
+  background: rgba(20, 16, 32, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 6px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.service-kicker {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--cards-gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.service-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.service-meta-tags {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  color: #dfd7cc;
+  margin-bottom: 1.5rem;
+}
+
+.service-meta-tags .meta-dot {
+  margin: 0 0.5rem;
+  color: var(--cards-gold);
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #c5bfb6;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.tarot-price-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 4px;
+  padding: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.price-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.price-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: #a8a096;
+}
+
+.price-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--cards-gold);
+  font-weight: 600;
+}
+
+.deposit-detail {
+  font-size: 0.8rem;
+  color: #bcb6ad;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.secure-tag {
+  display: block;
+  font-size: 0.72rem;
+  color: #8c857b;
+  margin-top: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(12, 11, 9, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }  
 .header-container { max-width: 1320px; margin: 0 auto; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; }  
 .brand-logo { font-family: var(--font-serif); font-size: 1.6rem; letter-spacing: 0.15em; font-weight: 600; }  
@@ -577,4 +1006,7 @@ button, input, select, textarea { font-family: inherit; font-size: 1rem; }
   .zen-session-info-bar { flex-direction: column; gap: 0.4rem; }  
   .info-pill-divider { display: none; }  
   .btn-zen-book { width: 100%; }  
+
+  
 }
+
